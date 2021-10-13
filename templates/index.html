@@ -22,7 +22,8 @@
 
 <body>
     <div class="container">
-        <h2 class="text-center alert alert-info mt-3">Quiz App using Python Django, Javascript and Jquery</h2>
+        <h2 class="text-center alert alert-info mt-3"><i class="fas fa-star"></i> Quiz App using Python Django,
+            Javascript and Jquery <i class="fas fa-star"></i></h2>
 
         <div>
             {% if exam %}
@@ -75,6 +76,9 @@
         {% endif %}
     </div>
 
+    <!-- FontAwesome CDN -->
+    <script src="https://kit.fontawesome.com/07295ea1fd.js" crossorigin="anonymous"></script>
+
     <!-- jquery link -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -109,13 +113,14 @@
     </script>
 
     <h5 style="text-align: center">
-        <a class="btn btn-warning mt-5" href="{% url 'create' %}">Add New Question</a>
+        <a class="btn btn-warning mt-5" href="{% url 'create' %}">Add New Question <i class="fas fa-plus-circle"></i>
+        </a>
     </h5>
 
     <footer class="text-center my-5">
         <h5>
-            By <a href="https://github.com/jacktherock">Abhijeet Sonawane</a> &
-            <a href="https://github.com/prateiku/">Pratik Chopane</a> 
+            By <a href="https://github.com/jacktherock">Abhijeet Sonawane <i class="fab fa-github"></i> </a> &
+            <a href="https://github.com/prateiku/">Pratik Chopane <i class="fab fa-github"></i> </a>
         </h5>
     </footer>
 
