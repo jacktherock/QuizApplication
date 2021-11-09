@@ -42,7 +42,7 @@ Quiz Application is created using Python Django, Javascript, Jquery and using my
  - Then on app's homepage questions will appear with their options.
 
 
-## Contributor:
+## Contributor
  - [Pratik Chopane](https://github.com/prateiku)
 
 ## Support
