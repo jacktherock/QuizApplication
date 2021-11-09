@@ -23,7 +23,7 @@ Quiz Application is created using Python Django, Javascript, Jquery and using my
   python manage.py migrate
 ```
 
-    this will create tables in the database .
+  this will create tables in the database .
 
  - Now run below command to run Django Server 
 ```bash
