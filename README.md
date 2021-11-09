@@ -3,9 +3,9 @@
 Quiz Application is created using Python Django, Javascript, Jquery and using mySQL database. 
 
 ## MySQL Database
- - NAME: djangoquiz
- - ENGINE: 127.0.0.1
- - PORT: 3306
+ - NAME: `djangoquiz`
+ - ENGINE: `127.0.0.1`
+ - PORT: `3306`
 
 
 ## Django SERVER 
