@@ -3,9 +3,9 @@
 Quiz Application is created using Python Django, Javascript, Jquery and using mySQL database. 
 
 ## MySQL Database
- - NAME: djangoquiz
- - ENGINE: 127.0.0.1
- - PORT: 3306
+ - NAME: `djangoquiz`
+ - ENGINE: `127.0.0.1`
+ - PORT: `3306`
 
 
 ## Django SERVER 
@@ -39,10 +39,10 @@ Quiz Application is created using Python Django, Javascript, Jquery and using my
   INSERT INTO 'quiz_exam'('id', 'Question', 'Option1', 'Option2', 'Option3', 'Option4', 'Answer') VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
 ```
 
- - Then on app's homepage questions will appear with their options.
+ - Then on app's homepage, questions will appear with their options.
 
 
-## Contributor:
+## Contributor
  - [Pratik Chopane](https://github.com/prateiku)
 
 ## Support
