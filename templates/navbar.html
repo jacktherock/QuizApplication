@@ -1,0 +1,52 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="mx-5 navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'img/logo.png' %}" alt="" width="30" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-2">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-bold text-warning me-5 mt-0" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i> {{request.user|capfirst}}
+                    </a>
+                    <ul class="dropdown-menu mb-1 dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'userprofile' user.id %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'changepass' %}">Change Password</a></li>
+                        {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'create' %}">Add New Question</a></li>
+                        <li><a class="dropdown-item" href="{% url 'allusers' %}">All Users</a></li>
+                        {% endif %}
+                    </ul>
+                <li>
+                    <a class="btn btn-outline-danger me-5" href="{% url 'logout' %}">Logout <i
+                            class="fas fa-sign-out-alt"></i></a>
+                </li>
+                {% else %}
+                <li>
+                    <a class="btn btn-outline-info mt-1 me-2" href="{% url 'signup' %}">SignUp <i
+                            class="fas fa-user-plus"></i></a>
+                </li>
+                <li>
+                    <a class="btn btn-outline-warning mt-1 me-5" href="{% url 'login' %}">Login <i
+                            class="fas fa-sign-in-alt"></i></a>
+                </li>
+                {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

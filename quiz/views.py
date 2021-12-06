@@ -10,12 +10,19 @@ def home(request):
 
 # create new question view
 def create(request):
-    if request.method == 'POST':
-        form = ExamForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Question Added Successfully ! Please Add New Question !")
-            return redirect('create')
+    if request.user.is_authenticated:
+        if request.user.is_superuser:
+            if request.method == 'POST':
+                form = ExamForm(request.POST)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, "Question Added Successfully ! Please Add New Question !")
+                    return redirect('create')
+            else:
+                form = ExamForm()
+            return render(request, 'create.html', {'form': form})
+        else:
+            messages.error(request, "Unauthorized User Can't Access This Page !")
+        return redirect('/')
     else:
-        form = ExamForm()
-    return render(request, 'create.html', {'form': form})
+        return redirect("/")

@@ -4,18 +4,11 @@
 
 {% block content %}
 
+
+
 <h2 class="container text-center alert alert-primary my-3 col-sm-8">Add a New Question</h2>
 
-<!-- Alert Messages -->
-<div class="container col-sm-8">
-    {% if messages %}
-    {% for message in messages %}
-        <div {% if message.tags %} class="fw-bold alert alert-{{message.tags}} text-center ms" {% endif %}  role="alert"> {{message}} </div> 
-    {% endfor %}
-{% endif %}
-</div>
-
-<form method="POST" class="container col-sm-6 mb-3 shadow p-5 border-top" style="border-radius: 15px; padding: 5px 30px">
+<form method="POST" class="container col-sm-6 mb-3 shadow border-top" style="border-radius: 15px; padding: 40px">
     {% csrf_token %}
     <div class="form-group mt-2">
         <!-- <div class="mb-1">Question No:</div> -->
@@ -57,6 +50,5 @@
         </a>
     </div>
 </form>
-
 
 {% endblock content %}

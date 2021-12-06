@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SignUp{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3 class="text-center alert alert-info mt-3">SignUp</h3>
+
+            <form action="" method="post" novalidate class="shadow p-5 border-top"
+                style="border-radius: 15px; padding: 40px">
+                {% csrf_token %}
+                {% for fm in form %}
+                <div class="mt-2 mb-1">
+                    <i class="fas fa-user"></i> {{fm.label_tag}}
+                    <small class="text-danger">
+                        {{fm.errors|striptags}}
+                    </small>
+                </div>
+                {{fm}}
+                {% endfor %}
+                <input type="submit" class="btn btn-primary mt-3" value="Create">
+                <p class="mt-2">Already Have an Account ? Please <a href="{% url 'login' %}">Login</a></p>
+            </form>
+
+            <div>
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="fw-bold alert alert-danger my-3 ms">{{error}}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}
